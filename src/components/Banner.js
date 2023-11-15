@@ -1,4 +1,3 @@
-// components/BandInfo.js
 import React from 'react';
 import { Heading, Box, Image, Flex } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';

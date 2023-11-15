@@ -5,7 +5,8 @@ export const AuthContext = createContext({});
 export function AuthProvider({ children }) {
     const [ticketMasterResults, setTicketMasterResults] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-
+    const [youtubeResults, setYoutubeResults] = useState([]);
+    
     useEffect(() => {
         async function handle() {
             await handleSearch();
@@ -15,7 +16,7 @@ export function AuthProvider({ children }) {
 
     const searchTicketMaster = async () => {
         try {
-            const ticketMasterUrl = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&keyword=${searchTerm}&apikey=x9TAS10ua31T7nONj8geuWe7Cnp7OixA`;
+            const ticketMasterUrl = `${process.env.NEXT_PUBLIC_BASE_URL_TICKET}${searchTerm}&apikey=${process.env.NEXT_PUBLIC_KEY_TICKET}`;
             const response = await fetch(ticketMasterUrl);
             const data = await response.json();
             console.log(data)
@@ -27,22 +28,22 @@ export function AuthProvider({ children }) {
         }
     };
 
-    // const searchYouTube = async () => {
-    //     try {
-    //         const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&key=AIzaSyB22vBAJfhPcrzhkZxWoxi9k4ZU784nErc`;
-    //         const response = await fetch(youtubeUrl);
-    //         const data = await response.json();
+    const searchYouTube = async () => {
+        try {
+            const youtubeUrl = `${process.env.NEXT_PUBLIC_BASE_URL_YOUTUBE}${searchTerm}&part=snippet&key=AIzaSyDMLJKHTQF1Mv8qUlMb8xLNi5RYNxYrSFM`;
+            const response = await fetch(youtubeUrl);
+            const data = await response.json();
 
-    //         if (data.items) {
-    //             setYoutubeResults(data.items);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error searching YouTube:', error);
-    //     }
-    // };
+            if (data.items) {
+                setYoutubeResults(data.items);
+            }
+        } catch (error) {
+            console.error('Error searching YouTube:', error);
+        }
+    };
 
     const handleSearch = async () => {
-        // await searchYouTube();
+        await searchYouTube();
         await searchTicketMaster();
     };
 
@@ -50,7 +51,8 @@ export function AuthProvider({ children }) {
         <AuthContext.Provider value={{
             ticketMasterResults,
             setSearchTerm,
-            handleSearch
+            handleSearch,
+            youtubeResults
         }}>
             {children}
         </AuthContext.Provider>

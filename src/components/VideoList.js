@@ -1,6 +1,5 @@
-// components/VideoList.js
 import React from 'react';
-import { Box, Text, Image, Button } from '@chakra-ui/react';
+import { Box, Text, Image, Button, VStack, Heading } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { AuthContext } from "../context/AuthContext";
 

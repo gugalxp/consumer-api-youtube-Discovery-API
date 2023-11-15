@@ -1,7 +1,6 @@
-// components/BandInfo.js
 import React from 'react';
 import { VStack, Heading, Box, Text, Image, Button } from '@chakra-ui/react';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from "../context/AuthContext";
 
 const BandInfo = () => {
@@ -27,7 +26,6 @@ const BandInfo = () => {
             <Text fontSize="md" color="gray.500" mt={2}>{event.promoter.name}</Text>
           )}
 
-          {/* Informações de Classificação */}
           {event.classifications?.map((classification) => (
             <VStack key={classification.segment?.id} align="start" spacing={2} mt={2}>
               {classification.segment && (

@@ -1,4 +1,3 @@
-// components/SearchForm.js
 import React, { useContext, useState } from 'react';
 import { Input, Button, VStack, Heading } from '@chakra-ui/react';
 import { AuthContext } from "../context/AuthContext";
