@@ -1,10 +1,16 @@
 // components/SearchForm.js
-import React from 'react';
-import { Input, Button, VStack } from '@chakra-ui/react';
+import React, { useContext, useState } from 'react';
+import { Input, Button, VStack, Heading } from '@chakra-ui/react';
+import { AuthContext } from "../context/AuthContext";
 
-const SearchForm = ({ searchTerm, setSearchTerm, handleSearch }) => {
+const SearchForm = () => {
+  const { setSearchTerm, handleSearch, searchTerm } = useContext(AuthContext);
+
   return (
     <VStack bg="rgba(0,0,0,1)" p={4} align="center" spacing={4}>
+      <Heading as="h1" color="#fff" size="xl" mb="2em">
+        Buscar Bandas e Artistas
+      </Heading>
       <Input
         placeholder="Digite o nome da banda ou artista"
         value={searchTerm}
@@ -14,7 +20,10 @@ const SearchForm = ({ searchTerm, setSearchTerm, handleSearch }) => {
         bg="#020024"
         h="3em"
       />
-      <Button mb={10} bg="#f000d7" color="#fff" onClick={handleSearch}>
+      <Button
+        mb={10}
+        bg="#f000d7"
+        color="#fff" onClick={handleSearch}>
         Pesquisar
       </Button>
     </VStack>

@@ -1,25 +1,13 @@
 // components/VideoList.js
 import React from 'react';
 import { Box, Text, Image, Button } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from "../context/AuthContext";
 
-const VideoList = ({ youtubeResults, formatDuration }) => {
-  const [youtubeResults, setYoutubeResults] = useState([]);
+const VideoList = () => {
 
-  const searchYouTube = async () => {
-    try {
-      const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&part=snippet&key=AIzaSyB22vBAJfhPcrzhkZxWoxi9k4ZU784nErc`;
-      const response = await fetch(youtubeUrl);
-      const data = await response.json();
-
-      if (data.items) {
-        setYoutubeResults(data.items);
-      }
-    } catch (error) {
-      console.error('Error searching YouTube:', error);
-    }
-  };
-
+  const { youtubeResults } = useContext(AuthContext);
+  
   return (
     <Box>
       <VStack align="start" spacing={4}>
