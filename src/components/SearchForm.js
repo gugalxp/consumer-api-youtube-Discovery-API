@@ -7,7 +7,7 @@ const SearchForm = () => {
 
   return (
     <VStack bg="rgba(0,0,0,1)" p={4} align="center" spacing={4}>
-      <Heading as="h1" color="#fff" size="xl" mb="2em">
+      <Heading as="h1" color="#fff" size="xl" mt="2em" mb="2em">
         Buscar Bandas e Artistas
       </Heading>
       <Input
