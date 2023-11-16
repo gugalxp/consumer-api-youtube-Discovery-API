@@ -9,7 +9,7 @@ const BandInfo = () => {
   const { ticketMasterResults } = useContext(AuthContext);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const tickerPerPage = 4;
+  const tickerPerPage = 5;
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -28,9 +28,9 @@ const BandInfo = () => {
         <span style={{ color: '#f000d7' }}>Ingressos</span> Bandas/Artistas
       </Heading>
       {currentTicker.map((event) => (
-        <Box key={event.id} border="1px" bg="#020024"  height="350px" boxShadow="#121212" width="100%" borderRadius="md" p={4} >
+        <Box key={event.id} data-aos="fade-up" data-aos-delay="100" border="1px" bg="#020024" height="350px" boxShadow="#121212" width="100%" borderRadius="md" p={4} >
           <Flex direction={{ base: "column", md: "row" }}>
-            <Image w="107px" h="67px" objectFit="cover" mb={2} src={event.images && event.images.length > 0 ? event.images[0].url : 'URL_PADRAO_SE_NAO_HOUVER'} alt={event.name} />
+            <Image borderRadius="8px" w="107px" h="67px" objectFit="cover" mb={2} src={event.images && event.images.length > 0 ? event.images[0].url : 'URL_PADRAO_SE_NAO_HOUVER'} alt={event.name} />
             <Box p={2}>
               <Text fontWeight="bold" color="#fff" fontSize="lg">{event.name}</Text>
               {event.dates?.start?.localDate && (
@@ -72,7 +72,7 @@ const BandInfo = () => {
         </Box>
       ))}
       <Pagination
-        currentPage={currentTicker}
+        currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
       />
