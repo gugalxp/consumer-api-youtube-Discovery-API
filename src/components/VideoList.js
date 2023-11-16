@@ -27,7 +27,7 @@ const VideoList = () => {
         <span style={{ color: '#f000d7' }}>Videos</span> Bandas/Artistas
       </Heading>
       {currentVideos.map((video) => (
-        <Box data-aos="fade-up" data-aos-delay="100" border="1px" boxShadow="#121212" bg="#020024" key={video.id.videoId} height="350px" width="100%" borderRadius="md" p={4} >
+        <Box data-aos="fade-up" data-aos-delay="100" border="1px" boxShadow="#121212" bg="#020024" key={video.id.videoId} width="100%" borderRadius="md" p={4} >
           <a
             href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
             target="_blank"
@@ -55,11 +55,13 @@ const VideoList = () => {
           </Button>
         </Box>
       ))}
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+      {youtubeResults.length > 5 && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      )}
     </VStack>
   );
 };

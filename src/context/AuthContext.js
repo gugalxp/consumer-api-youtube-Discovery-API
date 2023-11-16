@@ -29,7 +29,7 @@ export function AuthProvider({ children }) {
 
     const searchYouTube = async () => {
         try {
-            const youtubeUrl = `${process.env.NEXT_PUBLIC_BASE_URL_YOUTUBE}${searchTerm}&part=snippet&key=AIzaSyDMLJKHTQF1Mv8qUlMb8xLNi5RYNxYrSFM`;
+            const youtubeUrl = `${process.env.NEXT_PUBLIC_BASE_URL_YOUTUBE}${searchTerm}&part=snippet&key=${process.env.NEXT_PUBLIC_KEY_YOUTUBE}`;
             const response = await fetch(youtubeUrl);
             const data = await response.json();
 

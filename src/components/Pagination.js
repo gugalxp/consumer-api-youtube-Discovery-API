@@ -1,5 +1,5 @@
 import { Box, Button, Flex } from "@chakra-ui/react";
-import { useState } from "react";
+import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 
 // ... importações e código anterior ...
 
@@ -34,21 +34,19 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           <Button
             disabled={currentPage === 1}
             onClick={() => handlePageChange(currentPage - 1)}
-            mr={2}
             bg="#020024"
             color="#f000d7"
           >
-            Anterior
+            <SlArrowLeft />
           </Button>
           {renderPageButtons()}
           <Button
             disabled={currentPage === totalPages}
             onClick={() => handlePageChange(currentPage + 1)}
-            ml={2}
             bg="#020024"
             color="#f000d7"
           >
-            Próxima
+            <SlArrowRight />
           </Button>
         </Box>
       )}
