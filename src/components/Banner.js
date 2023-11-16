@@ -34,7 +34,7 @@ const Banner = () => {
                 <div data-aos="zoom-in-up" data-aos-once="true" data-aos-delay="5000" >
                     <Heading
                         as="h1"
-                        fontSize={{ base: "18px", md: "28px" }}
+                        fontSize={{ base: "22px", md: "28px" }}
                         mb="0.5em"
                         p={2}
                         fontFamily="cursive"
