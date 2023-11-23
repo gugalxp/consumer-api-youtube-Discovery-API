@@ -85,5 +85,3 @@ A biblioteca AOS é incorporada para fornecer animações elegantes durante a ro
 ## Considerações Finais
 
 O projeto foi desenvolvido com foco em boas práticas de codificação, componentização e design responsivo. As chaves de API devem ser mantidas em segredo e nunca compartilhadas publicamente. Certifique-se de seguir as instruções para configuração do ambiente antes de executar o projeto.
-
-Agradecemos por considerar nossa aplicação de busca de bandas e artistas. Em caso de dúvidas ou sugestões, entre em contato conosco. Divirta-se explorando o mundo da música! 🎶
