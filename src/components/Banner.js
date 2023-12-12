@@ -60,7 +60,7 @@ const Banner = () => {
         color="#fff"
         gap={5}
         w={{ base: "96%", md: "auto" }}
-        h={{ base: "96%", md: "auto" }}
+        h={{ base: "96vh", md: "auto" }}
       >
 
         <Box
