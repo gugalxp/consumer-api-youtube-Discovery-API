@@ -59,7 +59,8 @@ const Banner = () => {
         transform="translate(-50%, -50%)"
         color="#fff"
         gap={5}
-        w="96%"
+        w={{ base: "96%", md: "auto" }}
+        h={{ base: "96%", md: "auto" }}
       >
 
         <Box
@@ -71,7 +72,7 @@ const Banner = () => {
           animation={`${colorChange} 3s infinite`}
         >
           <Flex justifyContent="center" alignItems="center" direction="row">
-            <Heading mb={10} textAlign="center" color="#3498db">Videos/<Text color="#f000d7">Ingressos</Text></Heading>
+            <Heading mt={6} mb={10} textAlign="center" color="#3498db">Videos/<Text color="#f000d7">Ingressos</Text></Heading>
           </Flex>
           <Flex direction="column" justifyContent="center">
             <Text textAlign="center">
