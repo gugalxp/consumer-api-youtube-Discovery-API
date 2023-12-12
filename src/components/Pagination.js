@@ -7,7 +7,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const handlePageChange = (page) => {
     onPageChange(page);
   };
-  console.log("currentPage: ", currentPage)
   const renderPageButtons = () => {
     const buttons = [];
     for (let i = 1; i <= totalPages; i++) {
